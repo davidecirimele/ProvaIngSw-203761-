@@ -23,11 +23,8 @@ public void organizeList(List l,int s) {
 
 public List<Integer> ordineCrescente(List l) {
 	int temp;
-	boolean ordinata;
 	list = l;
 	
-		
-		ordinata=true;	
 		for(int i=0;i<list.size();i++)
 			for(int j=0;j<list.size();j++)
 				if(list.get(j)>list.get(i) && i!=j)
@@ -35,7 +32,6 @@ public List<Integer> ordineCrescente(List l) {
 					temp=list.get(i);
 					list.set(i,list.get(j));
 					list.set(j,temp);
-					ordinata=false;
 				}
 		
 		
@@ -44,11 +40,9 @@ public List<Integer> ordineCrescente(List l) {
 
 public List<Integer> ordineDecrescente(List l) {
 	int temp;
-	boolean ordinata;
 	list = l;
 	
-		
-		ordinata=true;	
+			
 		for(int i=0;i<list.size();i++)
 			for(int j=0;j<list.size();j++)
 				if(list.get(j)<list.get(i) && i!=j)
@@ -56,10 +50,8 @@ public List<Integer> ordineDecrescente(List l) {
 					temp=list.get(i);
 					list.set(i,list.get(j));
 					list.set(j,temp);
-					ordinata=false;
 				}
-		
-		
-		return l;
+			
+	return l;
 }
 }
