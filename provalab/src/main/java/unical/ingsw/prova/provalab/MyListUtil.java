@@ -11,54 +11,55 @@ public MyListUtil() {
 }
 
 public void organizeList(List l,int s) {
-	list = l;
 	switch(s) {
 	case 0:
-		ordineDecrescente();
+		ordineDecrescente(l);
 		break;
 	case 1:
-		ordineCrescente();
+		ordineCrescente(l);
 		break;
 	}
 }
 
-private void ordineCrescente() {
+public List<Integer> ordineCrescente(List l) {
 	int temp;
-	boolean ordinata=true;
+	boolean ordinata;
+	list = l;
 	
-	if(list!=null) {
-		do {
+		
 		ordinata=true;	
 		for(int i=0;i<list.size();i++)
 			for(int j=0;j<list.size();j++)
-				if(list.get(j)>list.get(i) && list.get(i)!=list.get(j))
+				if(list.get(j)>list.get(i) && i!=j)
 				{
 					temp=list.get(i);
 					list.set(i,list.get(j));
 					list.set(j,temp);
 					ordinata=false;
 				}
-		}while(!ordinata);
-	}
+		
+		
+		return l;
 }
 
-private void ordineDecrescente() {
+public List<Integer> ordineDecrescente(List l) {
 	int temp;
-	boolean ordinata=true;
+	boolean ordinata;
+	list = l;
 	
-	if(list!=null) {
-		do {
+		
 		ordinata=true;	
 		for(int i=0;i<list.size();i++)
 			for(int j=0;j<list.size();j++)
-				if(list.get(j)<list.get(i) && list.get(i)!=list.get(j))
+				if(list.get(j)<list.get(i) && i!=j)
 				{
 					temp=list.get(i);
 					list.set(i,list.get(j));
 					list.set(j,temp);
 					ordinata=false;
 				}
-		}while(!ordinata);
-	}
+		
+		
+		return l;
 }
 }
